@@ -148,7 +148,7 @@ If we change this policy in a way that affects how the app handles your data —
 
 Questions, concerns, or privacy requests:
 
-📧 **support@docflow.app**
+📧 **er.varunvision@gmail.com**
 
 We aim to respond within 7 days.
 
