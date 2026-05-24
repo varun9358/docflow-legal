@@ -1,16 +1,18 @@
 ---
 layout: default
-title: DocFlow Privacy Policy
+title: PDF Scanner, Reader & Editor — Privacy Policy
 ---
 
-# Privacy Policy for DocFlow
+# Privacy Policy
 
-**Last updated: May 2, 2026**
-**App package name: `com.docflow.pdftools`**
+**App name:** PDF Scanner, Reader & Editor (Android package `com.docflow.pdftools`)
+**Developer:** CodeOrbit Labs
+**Contact:** er.varunvision@gmail.com
+**Last updated:** May 24, 2026
 
-This Privacy Policy describes how the DocFlow mobile application ("DocFlow", "the app", "we", "our", or "us") handles your information.
+This Privacy Policy describes how the **PDF Scanner, Reader & Editor** mobile application (referred to below as "the app", "we", "our", or "us"), published on Google Play by **CodeOrbit Labs**, handles your information.
 
-The short version, in plain English: **DocFlow does not collect your data. Every document, image, signature, and setting stays on your device. We do not have a server. We have nothing to leak, sell, or hand over.**
+The short version, in plain English: **the app does not collect your data. Every document, image, signature, and setting stays on your device. We do not have a server. We have nothing to leak, sell, or hand over.**
 
 The rest of this document explains exactly what that means.
 
@@ -18,9 +20,9 @@ The rest of this document explains exactly what that means.
 
 ## 1. Information we do NOT collect
 
-We have intentionally built DocFlow to operate entirely on your device. Specifically, we do **not** collect, store, transmit, or have access to:
+We have intentionally built the app to operate entirely on your device. Specifically, we do **not** collect, store, transmit, or have access to:
 
-- The PDF, image, or text files you open, edit, or save
+- The PDF, image, or text files you open, edit, scan, or save
 - The contents of those files (text, images, signatures, watermarks, scanned content)
 - The result of any tool you run (merged PDFs, compressed PDFs, extracted text, etc.)
 - Your name, email address, or contact information
@@ -30,13 +32,13 @@ We have intentionally built DocFlow to operate entirely on your device. Specific
 - Crash logs, diagnostic data, or analytics events
 - Your in-app activity (which tools you use, how often, when)
 
-There is no DocFlow server. There is no DocFlow account. There is no login.
+There is no CodeOrbit Labs server collecting this data. There is no account. There is no login.
 
 ---
 
 ## 2. Information that stays on your device
 
-DocFlow stores certain data **locally on your device** so the app can work between sessions:
+The app stores certain data **locally on your device** so it can work between sessions:
 
 | What | Where | Why |
 |---|---|---|
@@ -47,82 +49,91 @@ DocFlow stores certain data **locally on your device** so the app can work betwe
 | Recent files list | Local app storage | So the home screen shows what you opened recently |
 | Your theme preference (Light / Dark / Sepia) | Local app storage | So the app remembers your setting |
 | Your subscription status | Local app storage | So premium features stay unlocked after restart |
+| Your scan count (free tier daily limit) | Local app storage | So the daily scan limit resets at local midnight |
 
-This data never leaves your device. If you uninstall DocFlow, all of this is deleted by your operating system.
+This data never leaves your device. If you uninstall the app, all of this is deleted by your operating system.
 
 ---
 
 ## 3. Permissions we request — and why
 
-DocFlow asks for the minimum permissions required for the features you actively use:
+The app asks for the minimum permissions required for the features you actively use:
 
 ### 📷 Camera
-**Used for:** Capturing a photo when you choose to extract text via OCR (Optical Character Recognition).
-**What happens with the photo:** It is processed entirely on your device using on-device machine learning (Google ML Kit). The photo and the extracted text are never uploaded anywhere by DocFlow. You can delete or share the photo at any time.
+**Used for:** Scanning paper documents to PDF (Document Scanner, ID Card Scanner), and capturing photos for OCR (text extraction).
+**What happens with the captured image:** It is processed entirely on your device. The Document Scanner uses Google ML Kit Document Scanner on Android and Apple VisionKit on iOS — both run on-device. OCR uses Google ML Kit's on-device text recognition. Captured images and extracted text are never uploaded by the app.
 
 ### 📁 Storage / Files / Photos
-**Used for:** Reading the documents and images you open in DocFlow, and saving the results of tools (merged PDFs, signed PDFs, compressed PDFs, etc.) to your device.
-**What happens with your files:** Files stay on your device. DocFlow does not copy, upload, or back up your files anywhere. When you tap "Share", you control where the file goes — DocFlow only hands it to the app you choose.
+**Used for:** Reading the documents and images you open in the app, and saving the results of tools (scanned PDFs, merged PDFs, signed PDFs, compressed PDFs, etc.) to your device.
+**What happens with your files:** Files stay on your device. The app does not copy, upload, or back up your files anywhere. When you tap "Share", you control where the file goes — the app only hands it to the destination app you choose.
 
 ### 🌐 Internet (declared but currently unused)
-The Android system requires apps to declare network permissions in advance. DocFlow declares `INTERNET` and `ACCESS_NETWORK_STATE`, but the current version makes **no network requests** of its own. Future versions may add features that require internet (e.g., subscription verification via Google Play Billing); when that happens, this policy will be updated and the change will be clearly disclosed.
+The Android system requires apps to declare network permissions in advance. The app declares `INTERNET` and `ACCESS_NETWORK_STATE`, but the current version makes **no network requests** of its own. Future versions may add features that require internet (e.g., subscription verification via Google Play Billing); when that happens, this policy will be updated and the change will be clearly disclosed.
 
 ### 🔓 Manage all files (`MANAGE_EXTERNAL_STORAGE`)
 **Used for:** Letting you open and save PDFs from any folder on your device (Downloads, Documents, app folders, etc.) without re-prompting for each location.
-**What happens:** This permission only enables file access for actions you explicitly initiate (opening a file, saving a result). DocFlow does not scan your storage in the background, does not enumerate your files, and does not share file lists with anyone.
+**What happens:** This permission only enables file access for actions you explicitly initiate (opening a file, saving a result). The app does not scan your storage in the background, does not enumerate your files, and does not share file lists with anyone.
 
 ---
 
-## 4. On-device machine learning (OCR)
+## 4. On-device machine learning (OCR & Document Scanner)
 
-DocFlow uses **Google ML Kit's on-device text recognition** to extract text from images and PDFs. According to Google's ML Kit documentation, the on-device version of text recognition runs entirely on your device — input images and recognized text are not sent to Google's servers by ML Kit.
+The app uses **Google ML Kit's on-device APIs** for two features:
 
-DocFlow only invokes the on-device API. We do not use the cloud version of ML Kit.
+1. **Text recognition (OCR)** — extracts text from images and PDFs you choose.
+2. **Document Scanner** (Android) — detects document edges and performs perspective correction when you scan paper documents.
+
+According to Google's ML Kit documentation, the on-device versions of these APIs run entirely on your device — input images and recognized text are not sent to Google's servers by ML Kit.
+
+The app only invokes the on-device APIs. We do not use cloud versions of ML Kit.
+
+On iOS, document scanning uses Apple's **VisionKit** framework, which also runs entirely on-device.
 
 ---
 
 ## 5. Sharing and exporting
 
-When you tap "Share" on a document inside DocFlow, you trigger your operating system's share sheet, which lets you send the file to another app you choose (email, messaging, cloud drives, etc.). DocFlow's role ends the moment you pick a destination.
+When you tap "Share" on a document inside the app, you trigger your operating system's share sheet, which lets you send the file to another app you choose (email, messaging, cloud drives, etc.). The app's role ends the moment you pick a destination.
 
-What happens to your file after that point is governed by the privacy policy of the app you sent it to (Gmail, WhatsApp, Google Drive, Dropbox, etc.) — not by DocFlow.
+What happens to your file after that point is governed by the privacy policy of the app you sent it to (Gmail, WhatsApp, Google Drive, Dropbox, etc.) — not by us.
 
 ---
 
 ## 6. In-app purchases (subscription)
 
-DocFlow offers an optional **Premium subscription** that unlocks advanced tools (unlimited OCR, watermarks, redaction, password protection, and more).
+The app offers an optional **Premium subscription** that unlocks advanced tools (unlimited scans, all scanner filters, ID Card mode, unlimited OCR, watermarks, redaction, password protection, and more).
 
-- Subscriptions are processed by **Google Play Billing**. DocFlow never receives or stores your payment card, billing address, or other financial details. That information is handled by Google.
-- DocFlow only stores a record of whether your subscription is active or expired, locally on your device.
+- Subscriptions are processed by **Google Play Billing**. We never receive or store your payment card, billing address, or other financial details. That information is handled by Google.
+- The app only stores a record of whether your subscription is active or expired, locally on your device.
 - For Google's handling of your purchase data, see the [Google Play Privacy Policy](https://play.google.com/intl/en/about/play-terms/).
 
 ---
 
 ## 7. Children's privacy
 
-DocFlow is not directed at children under the age of 13. We do not knowingly collect data from anyone — including children — because we do not collect data at all (see Section 1). The app does not contain features designed to attract children, and contains no advertising.
+The app is not directed at children under the age of 13. We do not knowingly collect data from anyone — including children — because we do not collect data at all (see Section 1). The app does not contain features designed to attract children, and contains no advertising.
 
 ---
 
 ## 8. Third-party services
 
-DocFlow currently uses the following third-party libraries that run on your device. None of them transmit your file content, identifiers, or behavior to a remote server in this application:
+The app currently uses the following third-party libraries that run on your device. None of them transmit your file content, identifiers, or behavior to a remote server in this application:
 
-- **Google ML Kit (text recognition)** — on-device only
+- **Google ML Kit** (text recognition + document scanner) — on-device only
+- **Apple VisionKit** (iOS document scanning) — on-device only
 - **Syncfusion Flutter PDF, pdf, pdfx, printing** — local PDF processing
 - **Hive, sqflite** — local data storage
 - **Other Flutter packages** — UI, file picking, sharing, animations
 
-If a future version of DocFlow integrates a service that does collect data (for example, an analytics SDK or cloud sync), this policy will be updated to disclose the service, the data collected, and how to opt out.
+If a future version integrates a service that does collect data (for example, an analytics SDK or cloud sync), this policy will be updated to disclose the service, the data collected, and how to opt out.
 
 ---
 
 ## 9. Data deletion
 
-Because DocFlow does not collect, store, or transmit any of your data to our servers, there is nothing for us to delete on your behalf.
+Because the app does not collect, store, or transmit any of your data to our servers, there is nothing for us to delete on your behalf.
 
-To delete the data DocFlow stores locally on your device, simply uninstall the app. Your operating system will remove all app data — including bookmarks, favorites, signatures, recent files, and any documents DocFlow created.
+To delete the data the app stores locally on your device, simply uninstall it. Your operating system will remove all app data — including bookmarks, favorites, signatures, recent files, and any documents the app created.
 
 ---
 
@@ -130,7 +141,7 @@ To delete the data DocFlow stores locally on your device, simply uninstall the a
 
 Privacy laws in your region may give you specific rights — including the right to access, correct, delete, or port your personal data, and the right to object to its processing.
 
-These rights apply to the data a company holds about you. **DocFlow does not hold any data about you**, so there is nothing to access, export, or delete on our side. If you live in a jurisdiction that requires us to confirm this in writing, contact us at the email below and we will respond.
+These rights apply to the data a company holds about you. **CodeOrbit Labs does not hold any data about you through this app**, so there is nothing to access, export, or delete on our side. If you live in a jurisdiction that requires us to confirm this in writing, contact us at the email below and we will respond.
 
 ---
 
@@ -149,9 +160,10 @@ If we change this policy in a way that affects how the app handles your data —
 Questions, concerns, or privacy requests:
 
 📧 **er.varunvision@gmail.com**
+🏢 **CodeOrbit Labs**
 
 We aim to respond within 7 days.
 
 ---
 
-*DocFlow is built with respect for your time, your privacy, and your files. If anything in this policy is unclear, please tell us — we'd rather rewrite it than have you wonder.*
+*PDF Scanner, Reader & Editor is built by CodeOrbit Labs with respect for your time, your privacy, and your files. If anything in this policy is unclear, please tell us — we'd rather rewrite it than have you wonder.*
